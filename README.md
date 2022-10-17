@@ -35,6 +35,10 @@ And bind the encrypted partition to the tang server (change my.tang.com to the F
 
 ```clevis luks bind -d /dev/sdb3 tang '{"url":"http://my.tang.com"}'```
 
+Lastly, add netdev to the /etc/fstab options for the encrypted device (change <UUID GOES HERE> with your UUID)
+
+```UUID=<UUID GOES HERE> /                       btrfs   _netdev,subvol=root,compress=zstd:1,x-systemd.device-timeout=0 0 0```
+
 Reboot and watch magic happen as your computer automatically unlocks.  
 
 If you need help finding the encrypted drive, install and start cockpit, it can be really helpful.
