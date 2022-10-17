@@ -37,3 +37,10 @@ And bind the encrypted partition to the tang server (change my.tang.com to the F
 
 Reboot and watch magic happen as your computer automatically unlocks.  
 
+If you need help finding the encrypted drive, install and start cockpit, it can be really helpful.
+
+```sudo dnf install -y cockpit cockpit-bridge cockpit-file-sharing cockpit-machines cockpit-navigator cockpit-networkmanager cockpit-ostree cockpit-packagekit cockpit-pcp cockpit-selinux cockpit-podman cockpit-storaged cockpit-system cockpit-ws```
+
+```sudo firewall-cmd --add-service=cockpit```
+
+```sudo systemctl enable --now cockpit.socket```
