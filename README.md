@@ -39,6 +39,10 @@ Next, add netdev to the /etc/fstab options for the encrypted device (change <UUI
 
 ```UUID=<UUID GOES HERE> /                       btrfs   _netdev,subvol=root,compress=zstd:1,x-systemd.device-timeout=0 0 0```
 
+Next run grubby to reconfigure grub
+
+```sudo grubby --update-kernel=ALL --args="rd.neednet=1"```
+
 And lastly, rebuild dracut
 
 ```sudo dracut -fv --regenerate-all```
