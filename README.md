@@ -33,7 +33,7 @@ Back on the encrypted system, install clevis-luks and clevis-dracut.
 
 And bind the encrypted partition to the tang server (change my.tang.com to the FQDN of your tang server)
 
-```clevis luks bind -d /dev/sdb3 tang '{"url":"http://my.tang.com"}'```
+```sudo clevis luks bind -d /dev/sdb3 tang '{"url":"http://my.tang.com"}'```
 
 Next, add netdev to the /etc/fstab options for the encrypted device (change <UUID GOES HERE> with your UUID)
 
