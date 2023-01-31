@@ -35,9 +35,9 @@ And bind the encrypted partition to the tang server (change my.tang.com to the F
 
 ```sudo clevis luks bind -d /dev/sdb3 tang '{"url":"http://my.tang.com"}'```
 
-Next, add netdev to the /etc/fstab options for the encrypted device (change <UUID GOES HERE> with your UUID)
+Next, add \_netdev to the /etc/fstab options for the encrypted device.
 
-```UUID=<UUID GOES HERE> /                       btrfs   _netdev,subvol=root,compress=zstd:1,x-systemd.device-timeout=0 0 0```
+```/dev/mapper/fedora-root /                       xfs     defaults,_netdev,x-systemd.device-timeout=0 0 0```
 
 Next run grubby to reconfigure grub
 
