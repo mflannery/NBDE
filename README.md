@@ -55,4 +55,6 @@ If you need help finding the encrypted drive, install and start cockpit, it can 
 
 ```sudo firewall-cmd --add-service=cockpit```
 
+```sudo firewall-cmd --runtime-to-permanent```
+
 ```sudo systemctl enable --now cockpit.socket```
